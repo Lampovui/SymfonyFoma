@@ -19,7 +19,7 @@ class CarPostController extends AbstractController
     }
 
     /**
-     * @Route("/addcar", methods={"POST"})
+     * @Route("/postcar", methods={"POST"})
      */
     public function post(Request $request): Response
     {
@@ -28,6 +28,8 @@ class CarPostController extends AbstractController
         $car = new Car();
         $car->setName($data['name']);
         $car->setBrand($data['brand']);
+
+        $this->entityManager->persist($car);
 
         $this->entityManager->flush();
 

@@ -23,7 +23,7 @@ class CarRepository extends ServiceEntityRepository
 
     public function save(Car $entity, bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+//        $this->getEntityManager()->persist($entity);
 
         if ($flush) {
             $this->getEntityManager()->flush();

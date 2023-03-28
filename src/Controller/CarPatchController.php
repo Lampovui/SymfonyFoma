@@ -32,11 +32,11 @@ class CarPatchController extends AbstractController
         $data = json_decode($request->getContent(), true);
 
         if (isset($data['name'])) {
-            $car->setAuthor($data['name']);
+            $car->setName($data['name']);
         }
 
         if (isset($data['brand'])) {
-            $car->setTitle($data['brand']);
+            $car->setBrand($data['brand']);
         }
 
         $this->entityManager->flush();
